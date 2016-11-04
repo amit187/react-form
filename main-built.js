@@ -104,7 +104,7 @@
 	else {
 		window.ObjectPath = ObjectPath;
 	}
-	
+
 }();
 /**
  * React (with addons) v0.12.2
@@ -25874,10 +25874,10 @@ module.exports = warning;
      * var array = [1];
      * var other = _.concat(array, 2, [3], [[4]]);
      *
-     * 
+     *
      * // => [1, 2, 3, [4]]
      *
-     * 
+     *
      * // => [1]
      */
     function concat() {
@@ -26156,7 +26156,7 @@ module.exports = warning;
      * var array = [1, 2, 3];
      *
      * _.fill(array, 'a');
-     * 
+     *
      * // => ['a', 'a', 'a']
      *
      * _.fill(Array(3), 2);
@@ -26653,7 +26653,7 @@ module.exports = warning;
      * var array = [1, 2, 3, 1, 2, 3];
      *
      * _.pull(array, 2, 3);
-     * 
+     *
      * // => [1, 1]
      */
     var pull = rest(pullAll);
@@ -26675,7 +26675,7 @@ module.exports = warning;
      * var array = [1, 2, 3, 1, 2, 3];
      *
      * _.pullAll(array, [2, 3]);
-     * 
+     *
      * // => [1, 1]
      */
     function pullAll(array, values) {
@@ -26705,7 +26705,7 @@ module.exports = warning;
      * var array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
      *
      * _.pullAllBy(array, [{ 'x': 1 }, { 'x': 3 }], 'x');
-     * 
+     *
      * // => [{ 'x': 2 }]
      */
     function pullAllBy(array, values, iteratee) {
@@ -26734,7 +26734,7 @@ module.exports = warning;
      * var array = [{ 'x': 1, 'y': 2 }, { 'x': 3, 'y': 4 }, { 'x': 5, 'y': 6 }];
      *
      * _.pullAllWith(array, [{ 'x': 3, 'y': 4 }], _.isEqual);
-     * 
+     *
      * // => [{ 'x': 1, 'y': 2 }, { 'x': 5, 'y': 6 }]
      */
     function pullAllWith(array, values, comparator) {
@@ -26761,10 +26761,10 @@ module.exports = warning;
      * var array = [5, 10, 15, 20];
      * var evens = _.pullAt(array, 1, 3);
      *
-     * 
+     *
      * // => [5, 15]
      *
-     * 
+     *
      * // => [10, 20]
      */
     var pullAt = rest(function(array, indexes) {
@@ -26798,10 +26798,10 @@ module.exports = warning;
      *   return n % 2 == 0;
      * });
      *
-     * 
+     *
      * // => [1, 3]
      *
-     * 
+     *
      * // => [2, 4]
      */
     function remove(array, predicate) {
@@ -26845,7 +26845,7 @@ module.exports = warning;
      * _.reverse(array);
      * // => [3, 2, 1]
      *
-     * 
+     *
      * // => [3, 2, 1]
      */
     function reverse(array) {
@@ -27843,17 +27843,17 @@ module.exports = warning;
      * var array = [1, 2];
      * var wrapped = _(array).push(3);
      *
-     * 
+     *
      * // => [1, 2]
      *
      * wrapped = wrapped.commit();
-     * 
+     *
      * // => [1, 2, 3]
      *
      * wrapped.last();
      * // => 3
      *
-     * 
+     *
      * // => [1, 2, 3]
      */
     function wrapperCommit() {
@@ -27975,7 +27975,7 @@ module.exports = warning;
      * _(array).reverse().value()
      * // => [3, 2, 1]
      *
-     * 
+     *
      * // => [3, 2, 1]
      */
     function wrapperReverse() {
@@ -28298,12 +28298,12 @@ module.exports = warning;
      * @example
      *
      * _([1, 2]).forEach(function(value) {
-     *   
+     *
      * });
      * // => Logs `1` then `2`.
      *
      * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
-     *   
+     *
      * });
      * // => Logs 'a' then 'b' (iteration order is not guaranteed).
      */
@@ -28328,7 +28328,7 @@ module.exports = warning;
      * @example
      *
      * _.forEachRight([1, 2], function(value) {
-     *   
+     *
      * });
      * // => Logs `2` then `1`.
      */
@@ -28958,7 +28958,7 @@ module.exports = warning;
      * @example
      *
      * _.defer(function(stamp) {
-     *   
+     *
      * }, _.now());
      * // => Logs the number of milliseconds it took for the deferred function to be invoked.
      */
@@ -28982,7 +28982,7 @@ module.exports = warning;
      * var saves = ['profile', 'settings'];
      *
      * var done = _.after(saves.length, function() {
-     *   
+     *
      * });
      *
      * _.forEach(saves, function(type) {
@@ -29438,7 +29438,7 @@ module.exports = warning;
      * @example
      *
      * _.defer(function(text) {
-     *   
+     *
      * }, 'deferred');
      * // => Logs 'deferred' after one or more milliseconds.
      */
@@ -29461,7 +29461,7 @@ module.exports = warning;
      * @example
      *
      * _.delay(function(text) {
-     *   
+     *
      * }, 1000, 'later');
      * // => Logs 'later' after one second.
      */
@@ -30000,7 +30000,7 @@ module.exports = warning;
      * // => []
      *
      * var array = [1, 2, 3];
-     * 
+     *
      * // => true
      */
     function castArray() {
@@ -30033,7 +30033,7 @@ module.exports = warning;
      * var objects = [{ 'a': 1 }, { 'b': 2 }];
      *
      * var shallow = _.clone(objects);
-     * 
+     *
      * // => true
      */
     function clone(value) {
@@ -30063,11 +30063,11 @@ module.exports = warning;
      *
      * var el = _.cloneWith(document.body, customizer);
      *
-     * 
+     *
      * // => false
-     * 
+     *
      * // => 'BODY'
-     * 
+     *
      * // => 0
      */
     function cloneWith(value, customizer) {
@@ -30088,7 +30088,7 @@ module.exports = warning;
      * var objects = [{ 'a': 1 }, { 'b': 2 }];
      *
      * var deep = _.cloneDeep(objects);
-     * 
+     *
      * // => false
      */
     function cloneDeep(value) {
@@ -30115,11 +30115,11 @@ module.exports = warning;
      *
      * var el = _.cloneDeepWith(document.body, customizer);
      *
-     * 
+     *
      * // => false
-     * 
+     *
      * // => 'BODY'
-     * 
+     *
      * // => 20
      */
     function cloneDeepWith(value, customizer) {
@@ -31900,7 +31900,7 @@ module.exports = warning;
      * Foo.prototype.c = 3;
      *
      * _.forIn(new Foo, function(value, key) {
-     *   
+     *
      * });
      * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
      */
@@ -31931,7 +31931,7 @@ module.exports = warning;
      * Foo.prototype.c = 3;
      *
      * _.forInRight(new Foo, function(value, key) {
-     *   
+     *
      * });
      * // => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.
      */
@@ -31964,7 +31964,7 @@ module.exports = warning;
      * Foo.prototype.c = 3;
      *
      * _.forOwn(new Foo, function(value, key) {
-     *   
+     *
      * });
      * // => Logs 'a' then 'b' (iteration order is not guaranteed).
      */
@@ -31993,7 +31993,7 @@ module.exports = warning;
      * Foo.prototype.c = 3;
      *
      * _.forOwnRight(new Foo, function(value, key) {
-     *   
+     *
      * });
      * // => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
      */
@@ -32629,11 +32629,11 @@ module.exports = warning;
      * var object = { 'a': [{ 'b': { 'c': 3 } }] };
      *
      * _.set(object, 'a[0].b.c', 4);
-     * 
+     *
      * // => 4
      *
      * _.set(object, ['x', '0', 'y', 'z'], 5);
-     * 
+     *
      * // => 5
      */
     function set(object, path, value) {
@@ -32792,13 +32792,13 @@ module.exports = warning;
      * _.unset(object, 'a[0].b.c');
      * // => true
      *
-     * 
+     *
      * // => { 'a': [{ 'b': {} }] };
      *
      * _.unset(object, ['a', '0', 'b', 'c']);
      * // => true
      *
-     * 
+     *
      * // => { 'a': [{ 'b': {} }] };
      */
     function unset(object, path) {
@@ -32825,11 +32825,11 @@ module.exports = warning;
      * var object = { 'a': [{ 'b': { 'c': 3 } }] };
      *
      * _.update(object, 'a[0].b.c', function(n) { return n * n; });
-     * 
+     *
      * // => 9
      *
      * _.update(object, 'x[0].y.z', function(n) { return n ? n + 1 : 0; });
-     * 
+     *
      * // => 0
      */
     function update(object, path, updater) {
@@ -34246,7 +34246,7 @@ module.exports = warning;
      * var view = {
      *   'label': 'docs',
      *   'onClick': function() {
-     *     
+     *
      *   }
      * };
      *
@@ -34985,10 +34985,10 @@ module.exports = warning;
      * var path = ['a', 'b', 'c'],
      *     newPath = _.toPath(path);
      *
-     * 
+     *
      * // => ['a', 'b', 'c']
      *
-     * 
+     *
      * // => false
      */
     function toPath(value) {
@@ -54270,7 +54270,7 @@ define('ComposedComponent',[
 
 
 		componentWillMount : function() {
-			
+
 			this.onChangeValidate = this.onChangeValidate.bind(this);
 			var value = this.defaultValue();
 			var validationResult = utils.validate(this.props.form, value)
@@ -54401,15 +54401,15 @@ define('jsx!RText',[
 			}
 			if(this.props.bareFormat || this.props.form.schema.bareFormat) {
 				return (
-					React.createElement("span", {className: classes}, 
+					React.createElement("span", {className: classes},
 					React.createElement("input", React.__spread({type: "text", className: "form-control", value: this.state.value, id: this.props.form.title, onChange: this.onChangeValidate},   readonly ? { readOnly  : "readonly"} : {}))
 					)
 					)
 			}
 			return (
-					React.createElement("div", null, 
-						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]), 
-						React.createElement("div", {className: classes}, 
+					React.createElement("div", null,
+						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]),
+						React.createElement("div", {className: classes},
 							React.createElement("input", React.__spread({type: "text", className: "form-control", value: this.state.value, title: title, id: this.props.form.title, onChange: this.onChangeValidate, title: title},   readonly ? { readOnly  : "readonly"} : {}))
 						)
 					)
@@ -54459,9 +54459,9 @@ define('jsx!RCheckbox',[
 				return (React.createElement("input", React.__spread({type: "checkbox", className: "required", checked: this.state.value, value: this.state.value, id: this.state.id, onChange: this.onChangeValidate, title: title},   readonly ? { readOnly  : "readonly"} : {})))
 			}
 			  return (
-					React.createElement("div", {className: "r-checkbox"}, 
-						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]), 
-						React.createElement("div", {className: classes}, 
+					React.createElement("div", {className: "r-checkbox"},
+						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]),
+						React.createElement("div", {className: classes},
 								React.createElement("input", React.__spread({type: "checkbox", className: "required"},   readonly ? { readOnly  : "readonly"} : {}, {checked: this.state.value, value: this.state.value, id: this.state.id, onChange: this.onChangeValidate, title: title}))
 						)
 					)
@@ -54490,27 +54490,27 @@ define('jsx!RRadios',[
 
 			var items = this.props.form.titleMap.map(function(item, index) {
 				return (
-					React.createElement("div", null, 
-						React.createElement("input", React.__spread({type: "radio", 
-						checked: item.value === this.state.value, 
-						value: item.value, 
-						id: this.state.id, 
-						onChange: this.onChangeValidate}, 
-						 this.props.form.readonly ? { readOnly  : "readonly"} : {})), 
+					React.createElement("div", null,
+						React.createElement("input", React.__spread({type: "radio",
+						checked: item.value === this.state.value,
+						value: item.value,
+						id: this.state.id,
+						onChange: this.onChangeValidate},
+						 this.props.form.readonly ? { readOnly  : "readonly"} : {})),
 							item.name
 					)
 				)
 			}.bind(this));
 
 			if(this.props.bareFormat || this.props.form.schema.bareFormat) {
-				return (React.createElement("span", null, 
+				return (React.createElement("span", null,
 					  items
 				))
 			}
 
 			return (
-				React.createElement("span", null, 
-				  React.createElement("label", {className: "control-lable"}, "localeHolder[", this.props.form.title, "]"), 
+				React.createElement("span", null,
+				  React.createElement("label", {className: "control-lable"}, "localeHolder[", this.props.form.title, "]"),
 					  items
 				)
 			)
@@ -54666,14 +54666,14 @@ define('jsx!RAutocomplete',[
 			var id = this.getId(this.props.form.key);
 			if(this.props.bareFormat || this.props.form.schema.bareFormat) {
 				return (
-					React.createElement("div", {id: id, className: "r-autoCompleteWrapper"}, 
+					React.createElement("div", {id: id, className: "r-autoCompleteWrapper"},
 										colNamesArray
 					)
 				)
 			}
 			return (
-				React.createElement("div", {id: id, className: "r-autoCompleteWrapper"}, 
-					React.createElement("label", null, localeHolder[this.props.form.title]), 
+				React.createElement("div", {id: id, className: "r-autoCompleteWrapper"},
+					React.createElement("label", null, localeHolder[this.props.form.title]),
 					colNamesArray
 				)
 
@@ -54736,9 +54736,9 @@ define('jsx!RDatePicker',[
 				return (React.createElement("input", React.__spread({type: "text", className: "span22 input-large", value: this.state.value, id: id, onChange: this.onChangeValidate},   readonly ? { readOnly  : "readonly"} : {})))
 			}
 			return (
-					React.createElement("div", null, 
-						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]), 
-						React.createElement("div", {className: classes}, 
+					React.createElement("div", null,
+						React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]),
+						React.createElement("div", {className: classes},
 							React.createElement("input", React.__spread({type: "text", className: "form-control", value: this.state.value, title: title, id: id, onChange: this.onChangeValidate, title: title},   readonly ? { readOnly  : "readonly"} : {}))
 						)
 					)
@@ -55570,11 +55570,11 @@ define('jsx!RSelect',[
   'jsx!utils',
   'ComposedComponent'
 ], function( _,  lodash, ObjectPath, React, utils, ComposedComponent){
-	
+
 	//const Switch = require('js/libs/Checkbox');
-	
+
 	var RDatePicker = {
-		
+
 
 		/*render : function() {
 		  return (
@@ -55590,18 +55590,18 @@ define('jsx!RSelect',[
 			          onChange={(event) => onChange(event.target.checked)} />
 			        <strong>{this.state.value}</strong>
 			      </label>
-			      
+
 			    </div>
 				  )
 
 	  }*/
 		render : function() {
 			  return (
-				  	React.createElement("div", {class: "row-fluid"}, 
-						React.createElement("div", {class: "span4"}, 
+				  	React.createElement("div", {class: "row-fluid"},
+						React.createElement("div", {class: "span4"},
 							React.createElement("label", {for: this.props.form.name, class: "fieldRequried"}, this.props.form.title)
-						), 
-					  React.createElement("select", {name: this.props.form.name, value: this.state.currentValue}, 
+						),
+					  React.createElement("select", {name: this.props.form.name, value: this.state.currentValue},
 					  	React.createElement("option", {value: this.state.currentValue}, this.state.currentValue)
 					  )
 					)
@@ -55677,10 +55677,10 @@ define('jsx!Tab',[
 			var jid = "#" + id;
 			var aid = id + "Id";
 			return (
-				React.createElement("div", null, 
+				React.createElement("div", null,
 					React.createElement("li", null, React.createElement("a", {id: aid, href: jid}, id)
-					), 
-					React.createElement("div", {id: id}, 
+					),
+					React.createElement("div", {id: id},
 						forms
 					)
 				)
@@ -55733,9 +55733,9 @@ define('jsx!RNumber',[
 			}*/
 		  return (
 
-				React.createElement("div", null, 
-					React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]), 
-					React.createElement("div", null, 
+				React.createElement("div", null,
+					React.createElement("label", {className: labelClass, for: this.props.form.name}, localeHolder[this.props.form.title]),
+					React.createElement("div", null,
 						React.createElement("input", React.__spread({type: "text", className: "form-control", value: value, id: this.props.form.title, onChange: this.onChangeValidate, title: title},   readonly ? { readOnly  : "readonly"} : {}))
 					)
 				)
@@ -55846,9 +55846,11 @@ define('jsx!ExamplePage',[
   'react',
   'jsx!utils',
   'jsx!SchemaForm',
-  'AppStore'
-], function( React, utils, SchemaForm, Events){
+  'AppStore',
+  'jsx!CodeMirrorEditor',
+], function( React, utils, SchemaForm, Events, CodeMirrorEditor){
 
+  var CodeMirror = React.createFactory(CodeMirrorEditor);
 
 
 
@@ -56234,16 +56236,44 @@ define('jsx!ExamplePage',[
 
 		render : function() {
 		  return (
-		  React.createElement("div", {className: "reactPage"}, 
-		   React.createElement("div", {className: "col-sm-12 col-md-12"}, 
-			React.createElement("pre", null, JSON.stringify(this.state.model)), 
-			 React.createElement("input", {type: "button", value: "Validate", onClick: this.onValidate}), 
-			  React.createElement("pre", null, JSON.stringify(this.state.validationResult,undefined,2,2))
-		   ), 
-		   React.createElement("input", {type: "button", value: "Calculate", onClick: this.calculate}), 
-		   React.createElement("div", {className: "form-group row"}, 
-
+		  React.createElement("div", {className: "col-sm-12 col-md-12"},
+			 React.createElement("div", {className: "col-sm-6 col-md-6"},
 			React.createElement(SchemaForm, {schema: this.state.schema, form: this.state.form, model: this.state.model, onModelChange: this.onModelChange, validationResult: this.state.validationResult})
+
+					  ),
+
+
+		   React.createElement("div", {className: "col-sm-6 col-md-6"},
+			 React.createElement("input", {type: "button", value: "Validate", onClick: this.onValidate}),
+			  React.createElement("pre", null, JSON.stringify(this.state.validationResult,undefined,2,2)),
+		   React.createElement("input", {type: "button", value: "Calculate", onClick: this.calculate}),
+		   React.createElement("div", {className: "col-sm-12 col-md-12"},
+			 CodeMirror({
+						style: {border: '1px solid black'},
+						textAreaClassName: ['form-control'],
+						textAreaStyle: {minHeight: '10em'},
+						value: JSON.stringify(this.state.schema, null, "\t"),
+						mode: 'javascript',
+						theme: 'solarized',
+						lineNumbers: true,
+						onChange: function (e) {
+						  this.setState({schema: JSON.parse(e.target.value)});
+						}.bind(this)
+					  }),
+								CodeMirror({
+						style: {border: '1px solid black'},
+						textAreaClassName: ['form-control'],
+						textAreaStyle: {minHeight: '10em'},
+						value: JSON.stringify(this.state.model, null, "\t"),
+						mode: 'javascript',
+						theme: 'solarized',
+						lineNumbers: true,
+						onChange: function (e) {
+						  this.setState({model: JSON.parse(e.target.value)});
+						}.bind(this)
+					  })
+
+			)
 			)
 			)
 			);
@@ -56309,8 +56339,8 @@ define('jsx!router',[
 	  };
 });
 define('app',[
- 
-  'underscore',  
+
+  'underscore',
   'ObjectPath',
   'react',
   'lodash',
@@ -56322,7 +56352,7 @@ define('app',[
     Router.initialize();
   };
 
-  return { 
+  return {
     initialize: initialize
   };
 
@@ -56354,4 +56384,187 @@ require([
 });
 
 define("main", function(){});
+
+
+/** @jsx React.DOM */
+// Filename: CodeMirrorEditor.js
+define('jsx!CodeMirrorEditor',[
+  'react',
+], function( React){
+  var CodeMirror;
+
+  // adapted from:
+  // https://github.com/facebook/react/blob/master/docs/_js/live_editor.js#L16
+
+  // also used as an example:
+  // https://github.com/facebook/react/blob/master/src/browser/ui/dom/components/ReactDOMInput.js
+
+  var IS_MOBILE = typeof navigator === 'undefined' || (
+    navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)
+  );
+
+  if (!IS_MOBILE) {
+    //CodeMirror = require('codemirror');
+  }
+
+  var CodeMirrorEditor = React.createClass({
+    getInitialState: function() {
+      return { isControlled: this.props.value != null };
+    },
+
+    propTypes: {
+      value: React.PropTypes.string,
+      defaultValue: React.PropTypes.string,
+      style: React.PropTypes.object,
+      className: React.PropTypes.string,
+      onChange: React.PropTypes.func
+    },
+
+    componentDidMount: function() {
+      var isTextArea = this.props.forceTextArea || IS_MOBILE;
+      if (!isTextArea && CodeMirror) {
+        var editor = this.refs.editor;
+        if (!editor.getAttribute) editor = editor.getDOMNode();
+        this.editor = CodeMirror.fromTextArea(editor, this.props);
+        this.editor.on('change', this.handleChange);
+      }
+    },
+
+    componentDidUpdate: function() {
+      if (this.editor) {
+        if (this.props.value != null) {
+          if (this.editor.getValue() !== this.props.value) {
+            this.editor.setValue(this.props.value);
+          }
+        }
+      }
+    },
+
+    handleChange: function() {
+      if (this.editor) {
+        var value = this.editor.getValue();
+        if (value !== this.props.value) {
+          this.props.onChange && this.props.onChange({target: {value: value}});
+          if (this.editor.getValue() !== this.props.value) {
+            if (this.state.isControlled) {
+              this.editor.setValue(this.props.value);
+            } else {
+              this.props.value = value;
+            }
+          }
+        }
+      }
+    },
+
+    render: function() {
+      var editor = React.createElement('textarea', {
+        ref: 'editor',
+        value: this.props.value,
+        readOnly: this.props.readOnly,
+        defaultValue: this.props.defaultValue,
+        onChange: this.props.onChange,
+        style: this.props.textAreaStyle,
+        className: this.props.textAreaClassName || this.props.textAreaClass
+      });
+
+      return React.createElement('div', {style: this.props.style, className: this.props.className}, editor);
+    }
+  });
+  return CodeMirrorEditor;
+
+});
+
+
+/** @jsx React.DOM */
+// Filename: codemirror.js
+define('jsx!CodeMirrorApp',[
+  'react',
+  'jsx!CodeMirrorEditor',
+], function( React, CodeMirrorEditor){
+  var CodeMirror = React.createFactory(CodeMirrorEditor);
+  var div = React.createFactory('div');
+  var h1 = React.createFactory('h1');
+  var p = React.createFactory('p');
+  var pre = React.createFactory('pre');
+  var code = React.createFactory('code');
+
+  var CodeMirrorApp = React.createClass({
+    getInitialState: function () {
+      return {
+        src: 'function add(a, b) {\n' +
+             '  return a + b;\n' +
+             '}'
+      };
+    },
+    render: function () {
+      return div({},
+        h1({}, 'Using "defaultValue"'),
+        p({}, 'This creates an editable code mirror editor, as you would expect. ' +
+                        'Note that it will not respond to changes in the model though.'),
+        CodeMirror({
+          style: {border: '1px solid black'},
+          textAreaClassName: ['form-control'],
+          textAreaStyle: {minHeight: '10em'},
+          defaultValue: this.state.src,
+          mode: 'javascript',
+          theme: 'solarized',
+          lineNumbers: true
+        }),
+        h1({}, 'Using "value" and no "onChange"'),
+        p({}, 'This creates a read only code mirror editor that responds to changes.'),
+        CodeMirror({
+          style: {border: '1px solid black'},
+          textAreaClassName: ['form-control'],
+          textAreaStyle: {minHeight: '10em'},
+          value: this.state.src,
+          mode: 'javascript',
+          theme: 'solarized',
+          lineNumbers: true,
+          readOnly: true
+        }),
+        h1({}, 'Using "value" with "onChange"'),
+        p({}, 'This creates a typical, editable code mirror editor that responds to changes.'),
+        CodeMirror({
+          style: {border: '1px solid black'},
+          textAreaClassName: ['form-control'],
+          textAreaStyle: {minHeight: '10em'},
+          value: this.state.src,
+          mode: 'javascript',
+          theme: 'solarized',
+          lineNumbers: true,
+          onChange: function (e) {
+            this.setState({src: e.target.value});
+          }.bind(this)
+        }),
+        h1({}, 'Using the forceTextArea option'),
+        p({}, 'This is the default fallback option for mobile browsers and works seamlessly.'),
+        CodeMirror({
+          forceTextArea: true,
+          textAreaClassName: ['form-control'],
+          textAreaStyle: {minHeight: '10em'},
+          value: this.state.src,
+          mode: 'javascript',
+          theme: 'solarized',
+          lineNumbers: true,
+          onChange: function (e) {
+            this.setState({src: e.target.value});
+          }.bind(this)
+        }),
+        h1({}, 'Just a pre/code'),
+        p({}, 'Just so you can see the output.'),
+        pre({}, code({},  this.state.src))
+      );
+    }
+  });
+
+//  React.render(React.createElement(CodeMirrorApp), document.getElementById('container'));
+	return CodeMirrorApp;
+});
+
 

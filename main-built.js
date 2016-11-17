@@ -55678,7 +55678,7 @@ define('jsx!Tab',[
 			var aid = id + "Id";
 			return (
 				React.createElement("div", null,
-					React.createElement("li", null, React.createElement("a", {id: aid, href: jid}, id)
+					React.createElement("li", {className: "reactTab"}, React.createElement("a", {id: aid, href: jid}, id)
 					),
 					React.createElement("div", {id: id},
 						forms
@@ -55776,11 +55776,11 @@ define('jsx!SchemaForm',[
 		},
 
 		componentDidMount : function() {
-			var li = $( ".SchemaForm li" );
+			var li = $( ".SchemaForm li.reactTab" );
 			if(! li) {
 				return;
 			}
-			var div = $(".SchemaForm li:first" ).parent();
+			var div = $(".SchemaForm li.reactTab:first" ).parent();
 			var list = $('<ul/>').appendTo(div);
 			div.append(li.parent().children("div"));
 			list.append(li);
@@ -56061,6 +56061,12 @@ define('jsx!ExamplePage',[
 			newSchema.readOnly = !newSchema.readOnly;
 			this.setState({ schema : newSchema });
 		},
+		onLiveUpdate: function() {
+			var schema = this.state.schema;
+			var newSchema = this.state.newSchema;
+			this.setState({ schema : window.cloneObject(schema, newSchema)});
+		},
+
 		componentDidMount : function() {
 			var options = [
 				{
@@ -56245,22 +56251,23 @@ define('jsx!ExamplePage',[
 
 		   React.createElement("div", {className: "col-sm-6 col-md-6"},
 			 React.createElement("input", {type: "button", value: "Validate", onClick: this.onValidate}),
+			 React.createElement("input", {type: "button", value: "Schema Update", onClick: this.onLiveUpdate}),
 			  React.createElement("pre", null, JSON.stringify(this.state.validationResult,undefined,2,2)),
 		   React.createElement("input", {type: "button", value: "Calculate", onClick: this.calculate}),
 		   React.createElement("div", {className: "col-sm-12 col-md-12"},
-			 CodeMirror({
+			 CodeMirrorEditor({
 						style: {border: '1px solid black'},
 						textAreaClassName: ['form-control'],
 						textAreaStyle: {minHeight: '10em'},
-						value: JSON.stringify(this.state.schema, null, "\t"),
+						defaultValue: JSON.stringify(this.state.schema, null, "\t"),
 						mode: 'javascript',
 						theme: 'solarized',
 						lineNumbers: true,
 						onChange: function (e) {
-						  this.setState({schema: JSON.parse(e.target.value)});
+						  this.setState({newSchema: JSON.parse(e.target.value)});
 						}.bind(this)
 					  }),
-								CodeMirror({
+								CodeMirrorEditor({
 						style: {border: '1px solid black'},
 						textAreaClassName: ['form-control'],
 						textAreaStyle: {minHeight: '10em'},
@@ -56418,6 +56425,7 @@ define('jsx!CodeMirrorEditor',[
       return { isControlled: this.props.value != null };
     },
 
+
     propTypes: {
       value: React.PropTypes.string,
       defaultValue: React.PropTypes.string,
@@ -56428,11 +56436,12 @@ define('jsx!CodeMirrorEditor',[
 
     componentDidMount: function() {
       var isTextArea = this.props.forceTextArea || IS_MOBILE;
-      if (!isTextArea && CodeMirror) {
+      if (!isTextArea && window.CodeMirror) {
         var editor = this.refs.editor;
         if (!editor.getAttribute) editor = editor.getDOMNode();
-        this.editor = CodeMirror.fromTextArea(editor, this.props);
+        this.editor = window.CodeMirror.fromTextArea(editor, this.props);
         this.editor.on('change', this.handleChange);
+        return true;
       }
     },
 
@@ -56481,90 +56490,18 @@ define('jsx!CodeMirrorEditor',[
 });
 
 
-/** @jsx React.DOM */
-// Filename: codemirror.js
-define('jsx!CodeMirrorApp',[
-  'react',
-  'jsx!CodeMirrorEditor',
-], function( React, CodeMirrorEditor){
-  var CodeMirror = React.createFactory(CodeMirrorEditor);
-  var div = React.createFactory('div');
-  var h1 = React.createFactory('h1');
-  var p = React.createFactory('p');
-  var pre = React.createFactory('pre');
-  var code = React.createFactory('code');
-
-  var CodeMirrorApp = React.createClass({
-    getInitialState: function () {
-      return {
-        src: 'function add(a, b) {\n' +
-             '  return a + b;\n' +
-             '}'
-      };
-    },
-    render: function () {
-      return div({},
-        h1({}, 'Using "defaultValue"'),
-        p({}, 'This creates an editable code mirror editor, as you would expect. ' +
-                        'Note that it will not respond to changes in the model though.'),
-        CodeMirror({
-          style: {border: '1px solid black'},
-          textAreaClassName: ['form-control'],
-          textAreaStyle: {minHeight: '10em'},
-          defaultValue: this.state.src,
-          mode: 'javascript',
-          theme: 'solarized',
-          lineNumbers: true
-        }),
-        h1({}, 'Using "value" and no "onChange"'),
-        p({}, 'This creates a read only code mirror editor that responds to changes.'),
-        CodeMirror({
-          style: {border: '1px solid black'},
-          textAreaClassName: ['form-control'],
-          textAreaStyle: {minHeight: '10em'},
-          value: this.state.src,
-          mode: 'javascript',
-          theme: 'solarized',
-          lineNumbers: true,
-          readOnly: true
-        }),
-        h1({}, 'Using "value" with "onChange"'),
-        p({}, 'This creates a typical, editable code mirror editor that responds to changes.'),
-        CodeMirror({
-          style: {border: '1px solid black'},
-          textAreaClassName: ['form-control'],
-          textAreaStyle: {minHeight: '10em'},
-          value: this.state.src,
-          mode: 'javascript',
-          theme: 'solarized',
-          lineNumbers: true,
-          onChange: function (e) {
-            this.setState({src: e.target.value});
-          }.bind(this)
-        }),
-        h1({}, 'Using the forceTextArea option'),
-        p({}, 'This is the default fallback option for mobile browsers and works seamlessly.'),
-        CodeMirror({
-          forceTextArea: true,
-          textAreaClassName: ['form-control'],
-          textAreaStyle: {minHeight: '10em'},
-          value: this.state.src,
-          mode: 'javascript',
-          theme: 'solarized',
-          lineNumbers: true,
-          onChange: function (e) {
-            this.setState({src: e.target.value});
-          }.bind(this)
-        }),
-        h1({}, 'Just a pre/code'),
-        p({}, 'Just so you can see the output.'),
-        pre({}, code({},  this.state.src))
-      );
+function cloneObject(obj, src) {
+    if(!obj) {
+    	obj = {}
     }
-  });
+    for(var i in src) {
+        if(typeof(src[i])=="object" && src[i] != null)
+            obj[i] = cloneObject(obj[i], src[i]);
+        else
+            obj[i] = src[i];
+    }
+    return obj;
+}
 
-//  React.render(React.createElement(CodeMirrorApp), document.getElementById('container'));
-	return CodeMirrorApp;
-});
 
 

@@ -56250,11 +56250,12 @@ define('jsx!ExamplePage',[
 
 
 		   React.createElement("div", {className: "col-sm-6 col-md-6"},
-			 React.createElement("input", {type: "button", value: "Validate", onClick: this.onValidate}),
-			 React.createElement("input", {type: "button", value: "Schema Update", onClick: this.onLiveUpdate}),
-			  React.createElement("pre", null, JSON.stringify(this.state.validationResult,undefined,2,2)),
-		   React.createElement("input", {type: "button", value: "Calculate", onClick: this.calculate}),
-		   React.createElement("div", {className: "col-sm-12 col-md-12"},
+
+			React.createElement("pre", null, JSON.stringify(this.state.validationResult,undefined,2,2)),
+		   	React.createElement("input", {type: "button", value: "Enable", onClick: this.calculate}),
+			React.createElement("input", {type: "button", value: "Validate", onClick: this.onValidate}),
+			React.createElement("input", {type: "button", value: "Update Schema", onClick: this.onLiveUpdate}),
+		    React.createElement("div", {className: "col-sm-12 col-md-12"},
 			 CodeMirrorEditor({
 						style: {border: '1px solid black'},
 						textAreaClassName: ['form-control'],
